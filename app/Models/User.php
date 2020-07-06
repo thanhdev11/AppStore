@@ -28,4 +28,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function contact() {
+        return $this->hasOne('App\Models\Contact', 'idUser', 'id');
+    }
+    
+    public function customer() {
+        return $this->hasOne('App\Models\Customer', 'idUser', 'id');
+    }
+    public function orders() {
+        return $this->hasMany('App\Models\Order', 'idUser', 'id');
+    }
+
 }
