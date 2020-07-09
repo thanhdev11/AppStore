@@ -5,7 +5,7 @@
 @section('content')
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Category</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -31,7 +31,7 @@
                 <tbody>
                     @foreach($categories as $key => $category )
                         <tr>
-                            <td>{{ $key }}</td>
+                            <td>{{ $key + 1 }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
                             <td>
@@ -42,10 +42,10 @@
                                 @endif
                             </td>
                             <td>
-                                <button class="btn btn-primary" title="{{ "Edit " . $category->name }}">
+                                <button class="btn btn-primary edit"  title="{{ 'Edit ' . $category->name }}">
                                     <i class="fas fa-edit" aria-hidden="true"></i>
                                 </button>
-                                <button class="btn btn-danger delete" title="{{ "Delete " . $category->name }}">
+                                <button class="btn btn-danger delete" title="{{ 'Delete ' . $category->name }}">
                                 <i class="fas fa-radiation" aria-hidden="true"></i>
                                 </button>
                             </td>
@@ -56,4 +56,6 @@
         </div>
     </div>
 </div>
+ 
+
 @endsection
